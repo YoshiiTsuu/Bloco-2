@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,9 +28,9 @@ public class Produto {
 	@NotNull
 	private String titulo;// titulo do jogo
 
-	@OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("produto")
-	private List<Categoria> postagem;
+	@ManyToOne
+	@JsonIgnoreProperties
+	private Categoria categoria; //Neste caso a categoria é a chave estrangeira
 
 	public long getId() {
 		return id;
