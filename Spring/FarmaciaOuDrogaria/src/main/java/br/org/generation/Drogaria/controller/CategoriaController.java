@@ -30,18 +30,18 @@ public class CategoriaController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> GetById(long id) {
+	public ResponseEntity<Categoria> GetById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 
 	}
 
 	@GetMapping("/descricao")
-	public ResponseEntity<List<Categoria>> GetByDescricao(String descricao) {
+	public ResponseEntity<List<Categoria>> GetByDescricao(@PathVariable String descricao) {
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 
 	@GetMapping("/efeito")
-	public ResponseEntity<List<Categoria>> GetByEfeito(String efeito) {
+	public ResponseEntity<List<Categoria>> GetByEfeito(@PathVariable String efeito) {
 		return ResponseEntity.ok(repository.findAllByEfeitoContainingIgnoreCase(efeito));
 	}
 
