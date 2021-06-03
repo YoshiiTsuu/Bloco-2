@@ -1,4 +1,4 @@
-package br.org.generation.GameStore.model;
+package br.org.generation.Drogaria.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +19,24 @@ public class Produto {
 	@NotNull
 	private String nome;
 	private double peso;
+	private String descricao;
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 	@NotNull
 	private double preco;
 	@ManyToOne

@@ -1,4 +1,4 @@
-package br.org.generation.GameStore.controller;
+package br.org.generation.Drogaria.controller;
 
 import java.util.List;
 
@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.org.generation.GameStore.model.Categoria;
-import br.org.generation.GameStore.repository.CategoriaRepository;
+import br.org.generation.Drogaria.model.Categoria;
+import br.org.generation.Drogaria.repository.CategoriaRepositorio;
 
 @Controller
 @RequestMapping("/categoria")
 public class CategoriaController {
 
 	@Autowired
-	private CategoriaRepository repository;
+	private CategoriaRepositorio repository;
 
 	@GetMapping
 	public ResponseEntity<List<Categoria>> GetAll() {

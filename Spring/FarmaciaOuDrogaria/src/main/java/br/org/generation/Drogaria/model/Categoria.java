@@ -1,4 +1,4 @@
-package br.org.generation.GameStore.model;
+package br.org.generation.Drogaria.model;
 
 import java.util.List;
 
